@@ -1,0 +1,25 @@
+﻿services:
+  - type: web
+    name: wecom-codex-bridge
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app --bind 0.0.0.0:$PORT --timeout 120
+    envVars:
+      - key: CORP_ID
+        value: ww273722755ad6c0a5
+      - key: CORP_SECRET
+        value: MC4bSEcvs_4VWuoLBjdogPyMQPQWZ7XJkHSsrdc6HlA
+      - key: AGENT_ID
+        value: "1000002"
+      - key: TOKEN
+        value: d763625beefd05e0
+      - key: ENCODING_AES_KEY
+        value: E2GFaD4WqbibdHPu1oOsPlHQYhvZCPS5TSfbD124mi0
+      - key: DEEPSEEK_API_KEY
+        value: sk-fec4cf14d09b4b968e75ecf6c0fc450f
+      - key: DEEPSEEK_BASE_URL
+        value: https://api.deepseek.com
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
+      - key: PORT
+        value: "10000"
